@@ -10,9 +10,7 @@ getText("https://jsonplaceholder.typicode.com/posts");
 
 async function getText(file) {
   let myObject = await fetch(file);
-  console.log("after 1st await", myObject);
   let myText = await myObject.json();
-  console.log("after 2nd await", myText);
   document.getElementById("demo").innerHTML = `
   <div><h2>${myText[0].title}</h2></div>
   <div>${myText[0].body}</div>
